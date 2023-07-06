@@ -18,7 +18,11 @@ get '/employees' do
 end
 
 get '/employees/:id' do
- {id: 1, name: "Juan"}.to_json
+  res = EmployeesController.new.get_employees_by_id(params['id']).to_json
+  unless res == "Employee 1000111 not found"
+    status 404
+  end
+  res
 end
 
 post '/employees' do
