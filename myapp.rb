@@ -26,9 +26,13 @@ get '/employees/:id' do
 end
 
 post '/employees' do
+  puts "🐳"
+  EmployeesController.new.post_employees(params).to_json
+  #{hola: "perros"}.to_json
 end
 
 put '/employees/:id' do
+
 end
 
 delete '/employees/:id' do

@@ -22,7 +22,18 @@ class EmployeesController
     end
   end
 
-  def post_employees
+  def post_employees(params)
+    emp_no = params['emp_no']
+    birth_date = params['birth_date']
+    first_name = params['first_name']
+    last_name = params['last_name']
+    gender = params['gender']
+    hire_date = params['hire_date']
+    #query =  "INSERT INTO employees (emp_no, birth_date, first_name, last_name, gender, hire_date) VALUES (#{emp_no}, '#{birth_day}', '#{first_name}', '#{last_name}', '#{gender}', '#{hire_date}')"
+    #query =  "insert into employees (emp_no, first_name, last_name, birth_date, hire_date) VALUES (#{emp_no}, '#{first_name}', '#{last_name}', '#{birth_date}', '#{hire_date}')"
+    query = "insert into employees (emp_no, first_name, last_name, birth_date, hire_date) VALUES (#{emp_no}, '#{first_name}', '#{last_name}', '#{birth_date}', '#{hire_date}')"
+    result = @@client.query(query)
+
 
 
   end
